@@ -11,6 +11,8 @@ import background from '../assets/background.png';
 import logo from '../assets/logo-Senai.png';
 import { Navigate } from "react-router-dom";
 
+import GlobalStyle from '../../styles/GlobalStyle.module.scss'
+
 
 function Login(){
 
@@ -72,9 +74,9 @@ function Login(){
 
 
     return ( 
-        <div className={style.LoginPageContainer}>
+        <div className={GlobalStyle.PageContainer}>
             <ToastContainer/>
-            <div className={style.Logo}/>
+            <div className={GlobalStyle.Logo}/>
             <div className={style.LoginForm}>
                 <h2 className={style.LoginTitle}>Login</h2>
                 <div className={style.InputGroup}>
