@@ -4,20 +4,15 @@ import { useNavigate } from "react-router-dom";
 import {login} from '../../actions/authActions';
 import { store, RootState, AppDispatch } from "../../store/store";
 import { ToastContainer, toast } from "react-toastify";
-import {
-    LoginPageContainer,
-    LoginForm,
-    LoginTitle,
-    InputGroup,
-    InputLabel,
-    InputField,
-    LoginButton,
-    Logo
-  } from '../../styles/LoginStyle';
+import style from '../../styles/LoginStyle.module.scss';
+import styled from 'styled-components';
+
+import background from '../assets/background.png';
+import logo from '../assets/logo-Senai.png';
 import { Navigate } from "react-router-dom";
 
 
-const Login: React.FC = () => {
+function Login(){
 
     const navigate = useNavigate()
 
@@ -77,34 +72,34 @@ const Login: React.FC = () => {
 
 
     return ( 
-        <LoginPageContainer>
+        <div className={style.LoginPageContainer}>
             <ToastContainer/>
-            <Logo/>
-            <LoginForm>
-                <LoginTitle>Login</LoginTitle>
-                <InputGroup>
-                <InputLabel htmlFor="username">Username</InputLabel>
-                <InputField
+            <div className={style.Logo}/>
+            <div className={style.LoginForm}>
+                <h2 className={style.LoginTitle}>Login</h2>
+                <div className={style.InputGroup}>
+                <label className={style.InputLabel} htmlFor="username">Username</label>
+                <input className={style.InputField}
                     type="String"
                     id="email"
                     placeholder="Seu email: "
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                </InputGroup>
-                <InputGroup>
-                <InputLabel htmlFor="password">Password</InputLabel>
-                <InputField
+                </div>
+                <div className={style.InputGroup}>
+                <label className={style.InputLabel} htmlFor="password">Password</label>
+                <input className={style.InputField}
                     type="password"
                     id="password"
                     placeholder="Sua senha"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                 />
-                </InputGroup>
-                <LoginButton onClick={verificationLogin}>Login</LoginButton>
-            </LoginForm>
-        </LoginPageContainer>
+                </div>
+                <button className={style.LoginButton} onClick={verificationLogin}>Login</button>
+            </div>
+        </div>
   );
 };
 

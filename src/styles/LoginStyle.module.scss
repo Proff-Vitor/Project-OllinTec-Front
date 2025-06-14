@@ -1,37 +1,26 @@
-import styled from 'styled-components';
-
-import background from '../assets/background.png'
-import logo from '../assets/logo-Senai.png'
-
-
-
-export const LoginPageContainer = styled.div`
+.LoginPageContainer{
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-image: url(${background});
+  background-image: url(../assets/background.png);
   background-size: cover;
   background-repeat: no-repeat;
+}
 
-`;
-
-export const Logo = styled.div`
+.Logo{
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 8%;
-  height: 4%;
-  background-image: url(${logo});
+  width: 12%;
+  height: 8%;
+  background-image: url('../assets/logo-Senai.png');
   // background-size: cover;
   background-repeat: no-repeat;
+}
 
-`;
-
-
-
-export const LoginForm = styled.div`
+.LoginForm{
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -43,9 +32,9 @@ export const LoginForm = styled.div`
   width: 30%;
   height: 60%;
   border: solid 3px #D9D9D9;
-`;
+}
 
-export const LoginTitle = styled.h2`
+.LoginTitle{
   color: #000;
   font-size: 1.7rem;
   padding-top: 5px;
@@ -56,26 +45,26 @@ export const LoginTitle = styled.h2`
   border-radius: 5px;
   align-self: center;
   margin-bottom: 10%;
-`;
+}
 
-export const InputGroup = styled.div`
+.InputGroup{
   margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   // align-items: center;
   justify-self: center;
-`;
+}
 
-export const InputLabel = styled.label`
+.InputLabel{
   color: #fff;
   display: block;
   align-self: left;
   margin-bottom: 5px;
   margin-left: 10%;
-`;
+}
 
-export const InputField = styled.input`
+.InputField{
   width: 80%;
   padding: 15px;
   border: none;
@@ -88,9 +77,9 @@ export const InputField = styled.input`
   &::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
-`;
+}
 
-export const LoginButton = styled.button`
+.LoginButton{
   background-color: rgba(255, 255, 255, 0.8);
   width: 30%;
   color: #000;
@@ -106,12 +95,12 @@ export const LoginButton = styled.button`
   &:hover {
     background-color: rgba(255, 255, 255, 0.4);
   }
-`;
+}
 
-export const IconContainer = styled.span`
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: rgba(255, 255, 255, 0.7);
-`;
+// export const IconContainer = styled.span`
+//   position: absolute;
+//   right: 10px;
+//   top: 50%;
+//   transform: translateY(-50%);
+//   color: rgba(255, 255, 255, 0.7);
+// `;
