@@ -21,8 +21,8 @@ export const Logo = styled.div`
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 8%;
-  height: 4%;
+  width: 12%;
+  height: 10%;
   background-image: url(${logo});
   // background-size: cover;
   background-repeat: no-repeat;
