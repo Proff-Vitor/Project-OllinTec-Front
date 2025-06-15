@@ -1,41 +1,4 @@
-<<<<<<< HEAD:src/styles/LoginStyle.ts
-import styled from 'styled-components';
-
-import background from '../assets/background.png'
-import logo from '../assets/logo-Senai.png'
-
-
-
-export const LoginPageContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  background-image: url(${background});
-  background-size: cover;
-  background-repeat: no-repeat;
-
-`;
-
-export const Logo = styled.div`
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 12%;
-  height: 10%;
-  background-image: url(${logo});
-  // background-size: cover;
-  background-repeat: no-repeat;
-
-`;
-
-
-
-export const LoginForm = styled.div`
-=======
 .LoginForm{
->>>>>>> sass:src/styles/LoginStyle.module.scss
   display: flex;
   flex-direction: column;
   justify-content: start;
