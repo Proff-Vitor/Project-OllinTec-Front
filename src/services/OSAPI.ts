@@ -1,6 +1,6 @@
 import { OrdemServico } from '../types/OrdemServico';
 
-const api_url = process.env.REACT_APP_API_URL || 'http://localhost:8080/api'
+const api_url = process.env.REACT_APP_API_URL || 'http://localhost:8080/api';
 
 const ListOs =  async () => {
 
@@ -93,10 +93,12 @@ const DeleteOs = async (numeroOs: number) => {
   return await response.json();
 };
 
-export default {
+const OSAPI = {
     ListOs, 
     RegisterOs,
     GetOsById,
     UpdateOs,
     DeleteOs
-}
+};
+
+export default OSAPI;
