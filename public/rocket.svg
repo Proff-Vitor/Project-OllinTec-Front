@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Rocket body -->
+  <rect x="35" y="10" width="30" height="50" fill="#FF6B6B" rx="5"/>
+  
+  <!-- Rocket nose cone -->
+  <polygon points="50,5 40,15 60,15" fill="#FFD93D"/>
+  
+  <!-- Window -->
+  <circle cx="50" cy="20" r="5" fill="#4ECDC4"/>
+  
+  <!-- Left fin -->
+  <polygon points="35,50 25,65 35,60" fill="#FF6B6B"/>
+  
+  <!-- Right fin -->
+  <polygon points="65,50 75,65 65,60" fill="#FF6B6B"/>
+  
+  <!-- Flame 1 (left) -->
+  <polygon points="40,60 35,75 42,65" fill="#FF4500"/>
+  
+  <!-- Flame 2 (center) -->
+  <polygon points="50,60 45,80 55,65" fill="#FFD700"/>
+  
+  <!-- Flame 3 (right) -->
+  <polygon points="60,60 65,75 58,65" fill="#FF4500"/>
+  
+  <!-- Glow effect -->
+  <circle cx="50" cy="70" r="8" fill="#FFD700" opacity="0.3"/>
+</svg>

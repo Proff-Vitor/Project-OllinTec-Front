@@ -1,0 +1,156 @@
+    
+.ContainerPrincipal {
+    width: 80%;
+    height: 63vh;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo translúcido branco */
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    border: solid 2px #D9D9D9;
+}
+
+.InputGroup{
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    // align-items: center;
+    justify-self: center;
+}
+  
+.InputLabel{
+    color: #fff;
+    display: block;
+    align-self: left;
+    margin-bottom: 5px;
+    margin-left: 5%;
+}
+
+label[for="descricao"] {
+    margin-left: 40px;
+  }
+  
+.InputField{
+    width: 70%;
+    padding: 10px;
+    border: none;
+    border-radius: 15px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    font-size: 16px;
+    align-self: center;
+    margin: 0px 100px 0px;
+    border: solid 3px #D9D9D9;
+    color: #000;
+  
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.InputGroup textarea{
+    position: relative;
+    width: 72.5vw;
+    height: 6em;
+    right: 6%;
+}
+
+
+.Form{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.2); /* Fundo translúcido branco */
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    height: 60%;
+    border: solid 3px #D9D9D9;
+}
+
+.Title{
+    background-color: #D9D9D9;
+    text-align: center;
+    font-size: 0.8rem;
+    width: 40%;
+    height: 6%;
+    border-radius: 5px;
+}
+
+h2{
+    color: rgba(0, 0, 0, 0.8);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    margin-top: 0px;
+}
+
+.ContainerLine {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.SaveButton, .RelatorioButton{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 20%;
+    color: #000;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: 10%;
+  
+    &:hover {
+      background-color: rgba(20, 168, 65, 0.4);
+      color: white;
+    }
+}
+
+.RelatorioButton{
+    &:hover {
+        background-color: rgba(39, 155, 233, 0.4);
+        color: white;
+      }
+}
+
+.BackButton{
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 20%;
+    color: #000;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    margin-top: 10%;
+
+    &:hover {
+      background-color: rgba(228, 26, 26, 0.8);
+      color: white;
+    }
+}
+  
+.ContainerButtons {
+  display: flex;
+  justify-content: center;
+  margin-right: 50px;
+  margin-top: -2%;
+  gap: 30px;
+  width: 90%;
+  height: 15px;
+}
+
+.ContainerLine:nth-child(5) .InputField:last-child {
+    width: 60%;
+    text-align: center;
+}

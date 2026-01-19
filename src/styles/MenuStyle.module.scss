@@ -1,0 +1,115 @@
+.Menu {
+  position: fixed;
+  top: 30px;
+  right: 20px;
+  width: auto;
+  height: auto;
+  background: transparent;
+  backdrop-filter: none;
+  box-shadow: none;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
+.MenuContainer {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.Logo {
+  display: none;
+}
+
+.BurgerButton {
+  display: flex;
+  flex-direction: column;
+  background: none;
+  border: none;
+  cursor: pointer;
+  gap: 6px;
+  padding: 8px;
+  margin-left: 0;
+
+  span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  &:hover span {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+}
+
+.MenuList {
+  display: none;
+  list-style: none;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 50px;
+  right: 0;
+  flex-direction: column;
+  background: linear-gradient(135deg, rgba(19, 212, 19, 0.95) 0%, rgba(15, 160, 15, 0.95) 100%);
+  backdrop-filter: blur(10px);
+  min-width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+
+  &.Active {
+    display: flex;
+  }
+
+  li {
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    button {
+      background-color: transparent;
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      border-radius: 0;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 15px;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      width: 100%;
+      text-align: left;
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        padding-left: 25px;
+      }
+
+      &:active {
+        background-color: rgba(255, 255, 255, 0.2);
+      }
+    }
+  }
+}
+
+.LogoutButton {
+  background-color: rgba(244, 67, 54, 0.7) !important;
+
+  &:hover {
+    background-color: rgba(244, 67, 54, 0.9) !important;
+    padding-left: 25px !important;
+  }
+}

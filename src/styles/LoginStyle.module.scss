@@ -1,0 +1,260 @@
+.Container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.LoginForm,
+.RegisterForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 400px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+.RegisterForm {
+  max-width: 450px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.LoginTitle {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 400;
+  text-align: center;
+  margin-bottom: 30px;
+  letter-spacing: 0.5px;
+}
+
+.InputGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.InputLabel {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.InputField {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 3px rgba(19, 212, 19, 0.1);
+  }
+}
+
+.PasswordWrapper {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+
+  .InputField {
+    flex: 1;
+    margin-bottom: 0;
+  }
+}
+
+.TogglePassword {
+  padding: 10px 12px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: #fff;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+}
+
+.LoginButton {
+  background: linear-gradient(135deg, rgb(19, 212, 19) 0%, rgb(15, 160, 15) 100%);
+  width: 100%;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(19, 212, 19, 0.3);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(19, 212, 19, 0.4);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(19, 212, 19, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.BackButton {
+  background-color: rgba(244, 67, 54, 0.8);
+  width: 100%;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+
+  &:hover {
+    background-color: rgba(244, 67, 54, 1);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+  }
+}
+
+.ButtonGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.RegisterLink {
+  text-align: center;
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 14px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.LinkButton {
+  background: none;
+  border: none;
+  color: rgb(19, 212, 19);
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+  transition: all 0.3s ease;
+  padding: 0;
+  font-size: 14px;
+
+  &:hover {
+    color: rgb(15, 160, 15);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .LoginForm,
+  .RegisterForm {
+    padding: 30px 20px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .LoginTitle {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .InputGroup {
+    margin-bottom: 16px;
+  }
+
+  .InputField {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .LoginButton,
+  .BackButton {
+    padding: 11px 18px;
+    font-size: 15px;
+    margin-top: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .Container {
+    padding: 15px;
+  }
+
+  .LoginForm,
+  .RegisterForm {
+    padding: 25px 15px;
+  }
+
+  .LoginTitle {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .InputLabel {
+    font-size: 12px;
+  }
+
+  .InputField {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .LoginButton,
+  .BackButton {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .TogglePassword {
+    padding: 8px 10px;
+    font-size: 11px;
+  }
+}

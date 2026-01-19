@@ -1,0 +1,61 @@
+.PageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  box-sizing: border-box;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.Logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 12%;
+  height: 8%;
+  background-image: url('../assets/logo-Senai.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+// Responsividade
+@media (max-width: 1024px) {
+  .Logo {
+    width: 15%;
+    height: 10%;
+  }
+}
+
+@media (max-width: 768px) {
+  .PageContainer {
+    padding: 15px;
+  }
+
+  .Logo {
+    width: 18%;
+    height: 12%;
+    top: 15px;
+    left: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .PageContainer {
+    padding: 10px;
+  }
+
+  .Logo {
+    width: 20%;
+    height: 10%;
+    top: 10px;
+    left: 10px;
+  }
+}

@@ -1,0 +1,341 @@
+.RegisterForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 600px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-sizing: border-box;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .RegisterTitle {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 0.5px;
+  }
+  
+  .InputGroup {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .InputLabel {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  
+  .InputField {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 0 3px rgba(19, 212, 19, 0.1);
+    }
+  }
+
+  .BackButton {
+    background-color: rgba(244, 67, 54, 0.8);
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+    flex: 1;
+    min-width: 100px;
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+    }
+  }
+  
+  .RegisterButton {
+    background: linear-gradient(135deg, rgb(19, 212, 19) 0%, rgb(15, 160, 15) 100%);
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(19, 212, 19, 0.3);
+    flex: 1;
+    min-width: 100px;
+  
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(19, 212, 19, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(19, 212, 19, 0.3);
+    }
+  }
+
+  .CancelButton {
+    background-color: rgba(255, 193, 7, 0.8);
+    color: #000;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3);
+    flex: 1;
+    min-width: 100px;
+
+    &:hover {
+      background-color: rgba(255, 193, 7, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 193, 7, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(255, 193, 7, 0.3);
+    }
+  }
+
+  .ContainerButtons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .ListContainer {
+    margin-top: 40px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .ListTitle {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .ListWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ListItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.25);
+    }
+  }
+
+  .ItemName {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    min-width: 150px;
+  }
+
+  .ItemActions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .EditButton {
+    background: linear-gradient(135deg, rgb(33, 150, 243) 0%, rgb(21, 101, 192) 100%);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(33, 150, 243, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+  .DeleteButton {
+    background: linear-gradient(135deg, rgb(244, 67, 54) 0%, rgb(211, 47, 47) 100%);
+    color: #fff;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+    white-space: nowrap;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(244, 67, 54, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+
+// Responsividade
+@media (max-width: 768px) {
+  .RegisterForm {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .RegisterTitle {
+    font-size: 22px;
+    margin-bottom: 25px;
+  }
+
+  .InputLabel {
+    font-size: 12px;
+  }
+
+  .InputField {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .BackButton,
+  .RegisterButton,
+  .CancelButton {
+    padding: 9px 14px;
+    font-size: 13px;
+    min-width: 90px;
+  }
+
+  .ContainerButtons {
+    gap: 10px;
+  }
+
+  .ListItem {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ItemActions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .RegisterForm {
+    padding: 20px 15px;
+  }
+
+  .RegisterTitle {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .InputLabel {
+    font-size: 11px;
+  }
+
+  .InputField {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .BackButton,
+  .RegisterButton,
+  .CancelButton {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+    min-width: auto;
+  }
+
+  .ContainerButtons {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .ListItem {
+    padding: 12px;
+  }
+
+  .ItemName {
+    font-size: 14px;
+    min-width: auto;
+  }
+
+  .EditButton,
+  .DeleteButton {
+    padding: 7px 10px;
+    font-size: 11px;
+  }
+}

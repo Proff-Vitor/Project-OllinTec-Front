@@ -1,0 +1,441 @@
+.OsContainer {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    height: 80%;
+    margin-top: 10%;
+    justify-content: start;
+    gap: 15px;
+    box-sizing: border-box;
+}
+
+.Search {
+    width: 50%;
+    padding: 12px 16px;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 16px;
+    align-self: center;
+    backdrop-filter: blur(3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    
+    &::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+    }
+
+    &:focus {
+        outline: none;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-color: rgba(255, 255, 255, 0.5);
+    }
+}
+
+.Button {
+    width: 150px;
+    padding: 12px 20px;
+    margin-top: 0;
+    font-size: 15px;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, rgb(19, 212, 19) 0%, rgb(15, 160, 15) 100%);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(19, 212, 19, 0.3);
+    align-self: center;
+
+    &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(19, 212, 19, 0.4);
+    }
+
+    &:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(19, 212, 19, 0.3);
+    }
+}
+
+.ListOS {
+    display: flex;
+    flex: 1;
+    color: #fff;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(255, 255, 255, 0.3);
+        border-radius: 4px;
+
+        &:hover {
+            background: rgba(255, 255, 255, 0.5);
+        }
+    }
+
+    ul {
+        list-style: none;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+.Item {
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(3px);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.12);
+        border-color: rgba(255, 255, 255, 0.3);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.ItemHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.OSNumber {
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    color: rgba(19, 212, 19, 0.9);
+}
+
+.Status {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    background-color: rgba(33, 150, 243, 0.3);
+    border-radius: 20px;
+    color: rgba(33, 150, 243, 1);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.OSTitle {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    color: #fff;
+}
+
+.OSDescription {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 10px 0;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ItemFooter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 10px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.Setor {
+    background-color: rgba(255, 193, 7, 0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: rgba(255, 193, 7, 0.9);
+    font-weight: 500;
+}
+
+.Tecnico {
+    background-color: rgba(76, 175, 80, 0.2);
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: rgba(76, 175, 80, 0.9);
+    font-weight: 500;
+}
+
+.Date {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.LoadingText {
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+}
+
+.NoData {
+    color: rgba(255, 255, 255, 0.7);
+    text-align: center;
+    font-size: 16px;
+}
+
+.User {
+    display: flex;
+    align-self: end;
+    font-size: 18px;
+    color: #fff;
+    gap: 20px;
+    margin-top: auto;
+    padding-bottom: 40px;
+    padding-right: 20px;
+    
+    h3 {
+        font-weight: 500;
+        margin: 0;
+        position: relative;
+        background: linear-gradient(90deg, 
+            rgba(255, 255, 255, 0.3) 0%,
+            rgba(255, 255, 255, 0.3) 20%,
+            rgba(255, 255, 255, 0.8) 50%,
+            rgba(255, 255, 255, 0.3) 80%,
+            rgba(255, 255, 255, 0.3) 100%);
+        background-size: 200% 100%;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        animation: shimmer 3s infinite;
+        text-shadow: 0 0 20px rgba(19, 212, 19, 0.5);
+        filter: drop-shadow(0 0 10px rgba(19, 212, 19, 0.4));
+        letter-spacing: 1px;
+    }
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+// Responsividade
+@media (max-width: 1024px) {
+  .OsContainer {
+    width: 90%;
+    height: 80%;
+    margin-top: 8%;
+  }
+
+  .Search {
+    width: 60%;
+  }
+
+  .Button {
+    width: 140px;
+    padding: 11px 18px;
+    font-size: 14px;
+  }
+
+  .Item {
+    padding: 12px;
+  }
+
+  .OSNumber {
+    font-size: 15px;
+  }
+
+  .OSTitle {
+    font-size: 14px;
+  }
+
+  .OSDescription {
+    font-size: 12px;
+  }
+
+  .User {
+    padding-bottom: 30px;
+    padding-right: 15px;
+    font-size: 16px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .OsContainer {
+    width: 95%;
+    height: 75%;
+    margin-top: 18%;
+    gap: 12px;
+  }
+
+  .Search {
+    width: 80%;
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .Button {
+    width: 130px;
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+
+  .Item {
+    padding: 12px;
+    margin-top: 8px;
+  }
+
+  .ItemHeader {
+    gap: 6px;
+  }
+
+  .OSNumber {
+    font-size: 14px;
+  }
+
+  .Status {
+    font-size: 11px;
+    padding: 3px 10px;
+  }
+
+  .OSTitle {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .OSDescription {
+    font-size: 11px;
+    margin-bottom: 8px;
+  }
+
+  .ItemFooter {
+    font-size: 11px;
+    gap: 6px;
+  }
+
+  .Setor {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .Tecnico {
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .User {
+    padding-bottom: 25px;
+    padding-right: 12px;
+    font-size: 14px;
+    gap: 12px;
+
+    h3 {
+      font-size: 14px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .OsContainer {
+    width: 98%;
+    height: 70%;
+    margin-top: 20%;
+    gap: 10px;
+  }
+
+  .Search {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .Button {
+    width: 120px;
+    padding: 9px 14px;
+    font-size: 12px;
+  }
+
+  .Item {
+    padding: 10px;
+    margin-top: 6px;
+  }
+
+  .ItemHeader {
+    gap: 5px;
+  }
+
+  .OSNumber {
+    font-size: 13px;
+  }
+
+  .Status {
+    font-size: 10px;
+    padding: 2px 8px;
+  }
+
+  .OSTitle {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .OSDescription {
+    font-size: 10px;
+    margin-bottom: 6px;
+    -webkit-line-clamp: 1;
+  }
+
+  .ItemFooter {
+    font-size: 10px;
+    gap: 5px;
+  }
+
+  .Setor {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .Tecnico {
+    padding: 2px 6px;
+    font-size: 10px;
+  }
+
+  .User {
+    padding-bottom: 20px;
+    padding-right: 10px;
+    font-size: 12px;
+    gap: 10px;
+
+    h3 {
+      font-size: 12px;
+    }
+  }
+}

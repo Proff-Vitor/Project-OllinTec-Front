@@ -1,0 +1,537 @@
+.ContainerPrincipal {
+    width: 90%;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    border: none;
+    box-sizing: border-box;
+    gap: 20px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.InputGroup {
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+  
+.InputLabel {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.InputField {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    &:focus {
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 0 0 0 3px rgba(19, 212, 19, 0.1);
+    }
+
+    &:not(:disabled) {
+      background-color: rgba(255, 255, 255, 0.15);
+      border-color: rgba(255, 255, 255, 0.4);
+      cursor: text;
+    }
+
+    &:disabled {
+      background-color: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.2);
+      color: rgba(255, 255, 255, 0.85);
+      cursor: not-allowed;
+      opacity: 1;
+    }
+}
+
+select.InputField {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+
+  option {
+    color: #000;
+    background-color: #fff;
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 1);
+    border-color: rgba(19, 212, 19, 0.8);
+    box-shadow: 0 0 0 3px rgba(19, 212, 19, 0.2);
+  }
+}
+
+.InputGroup textarea {
+    width: 100%;
+    min-height: 120px;
+    resize: vertical;
+    font-family: inherit;
+    padding: 12px 16px;
+}
+
+.Title {
+    background-color: transparent;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 400;
+    color: #fff;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+h2 {
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    font-weight: 400;
+}
+
+.ContainerLine {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 15px;
+
+    .InputGroup {
+        flex: 1;
+    }
+}
+
+.SaveButton, .RelatorioButton, .DeleteButton {
+    background: linear-gradient(135deg, rgb(19, 212, 19) 0%, rgb(15, 160, 15) 100%);
+    width: 100%;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(19, 212, 19, 0.3);
+  
+    &:hover:not(:disabled) {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(19, 212, 19, 0.4);
+    }
+
+    &:active:not(:disabled) {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(19, 212, 19, 0.3);
+    }
+
+    &:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+}
+
+.RelatorioButton {
+    background: linear-gradient(135deg, rgb(33, 150, 243) 0%, rgb(21, 101, 192) 100%);
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+
+    &:hover:not(:disabled) {
+      box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
+    }
+}
+
+.DeleteButton {
+    background: linear-gradient(135deg, rgb(244, 67, 54) 0%, rgb(211, 47, 47) 100%);
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+
+    &:hover:not(:disabled) {
+      box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+    }
+
+    &:active:not(:disabled) {
+      box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+    }
+}
+
+.BackButton {
+    background-color: rgba(244, 67, 54, 0.8);
+    width: 100%;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(244, 67, 54, 0.3);
+
+    &:hover {
+      background-color: rgba(244, 67, 54, 1);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(244, 67, 54, 0.4);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+    }
+}
+  
+.ContainerButtons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+  margin-top: 20px;
+  flex-wrap: wrap;
+
+  button {
+    flex: 1;
+    min-width: 120px;
+  }
+}
+
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  padding: 20px;
+}
+
+.ModalContent {
+  background: rgba(100, 150, 200, 0.08);
+  backdrop-filter: blur(30px);
+  border-radius: 15px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(100, 150, 200, 0.3);
+  max-height: 90vh;
+  overflow-y: auto;
+
+  h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 400;
+    margin: 0 0 15px 0;
+    text-align: center;
+  }
+
+  p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 15px;
+    margin: 0 0 20px 0;
+    text-align: center;
+  }
+}
+
+.ModalTextarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px 16px;
+  border: 1px solid rgba(100, 150, 200, 0.4);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  resize: vertical;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(100, 150, 200, 0.6);
+    box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.2);
+  }
+}
+
+.ModalButtons {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  button {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+  }
+}
+
+.CancelButton {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.ConfirmButton {
+  background: linear-gradient(135deg, rgb(76, 175, 80) 0%, rgb(56, 142, 60) 100%);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+
+  &:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+  }
+
+  &:active:not(:disabled) {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+.ModalFormGroup {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
+  label {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}
+
+.ModalInput {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid rgba(100, 150, 200, 0.4);
+  border-radius: 8px;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  font-size: 15px;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+
+  &::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-color: rgba(100, 150, 200, 0.6);
+    box-shadow: 0 0 0 3px rgba(100, 150, 200, 0.2);
+  }
+}
+
+select.ModalInput {
+  color: #000;
+  background-color: rgba(255, 255, 255, 0.9);
+
+  option {
+    color: #000;
+    background-color: #fff;
+  }
+}
+
+input[type="datetime-local"].ModalInput {
+  color: #fff;
+
+  &::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+  }
+}
+
+// Responsividade
+@media (max-width: 768px) {
+  .ContainerPrincipal {
+    padding: 30px 20px;
+    gap: 15px;
+  }
+
+  .Title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .InputLabel {
+    font-size: 12px;
+  }
+
+  .InputField {
+    padding: 11px 14px;
+    font-size: 14px;
+  }
+
+  .InputGroup textarea {
+    min-height: 100px;
+    padding: 11px 14px;
+  }
+
+  .ContainerLine {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .SaveButton, .RelatorioButton, .DeleteButton, .BackButton {
+    padding: 11px 18px;
+    font-size: 15px;
+  }
+
+  .ContainerButtons {
+    gap: 12px;
+
+    button {
+      min-width: 100px;
+    }
+  }
+
+  .ModalContent {
+    padding: 30px 20px;
+  }
+
+  .ModalButtons button {
+    min-width: 100px;
+    padding: 11px 18px;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ContainerPrincipal {
+    padding: 20px 15px;
+    gap: 12px;
+  }
+
+  .Title {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .InputLabel {
+    font-size: 11px;
+  }
+
+  .InputField {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+
+  .InputGroup textarea {
+    min-height: 80px;
+    padding: 10px 12px;
+  }
+
+  .SaveButton, .RelatorioButton, .DeleteButton, .BackButton {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+
+  .ContainerButtons {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+      min-width: auto;
+    }
+  }
+
+  .ModalContent {
+    padding: 20px 15px;
+
+    h3 {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+
+    p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .ModalTextarea {
+    min-height: 120px;
+    margin-bottom: 15px;
+  }
+
+  .ModalButtons {
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+      min-width: auto;
+      padding: 10px 16px;
+      font-size: 14px;
+    }
+  }
+
+  .ModalFormGroup {
+    margin-bottom: 15px;
+  }
+
+  .ModalInput {
+    padding: 10px 12px;
+    font-size: 13px;
+  }
+}
