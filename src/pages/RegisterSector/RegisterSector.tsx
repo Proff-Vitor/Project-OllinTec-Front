@@ -17,7 +17,6 @@ function RegisterSector () {
     const [setor, setSetor] = useState('');
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [editingId, setEditingId] = useState<number | null>(null);
-    const [editingName, setEditingName] = useState('');
 
     const isAdmin = user?.is_admin || false;
 

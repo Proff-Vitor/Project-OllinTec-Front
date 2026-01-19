@@ -1,16 +1,11 @@
 import React, { useEffect, useState } from "react";
-import {useDispatch, useSelector} from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from "react-router-dom";
-import {login} from '../../actions/authActions';
-import { store, RootState, AppDispatch } from "../../store/store";
+import { login } from '../../actions/authActions';
+import { AppDispatch } from "../../store/store";
 import { ToastContainer, toast } from "react-toastify";
 import style from '../../styles/LoginStyle.module.scss';
-import styled from 'styled-components';
 import UsuarioService from '../../services/UsuarioService';
-
-import background from '../assets/background.png';
-import logo from '../assets/logo-Senai.png';
-import { Navigate } from "react-router-dom";
 
 import GlobalStyle from '../../styles/GlobalStyle.module.scss'
 
