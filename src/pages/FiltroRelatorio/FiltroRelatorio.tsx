@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
-import RelatorioService from "../../services/RelatorioService";
 import RelatorioOsService from "../../services/RelatorioOsService";
 
 import style from '../../styles/FiltroRelatorioStyle.module.scss';
@@ -90,7 +89,6 @@ function FiltroRelatorio() {
             pdf.text(`Data de Geração: ${new Date().toLocaleDateString()}`, 15, 32);
 
             // Table configuration
-            const pageWidth = pdf.internal.pageSize.getWidth();
             const pageHeight = pdf.internal.pageSize.getHeight();
             const margin = 10;
             const tableStartY = 40;
@@ -239,130 +237,6 @@ function FiltroRelatorio() {
         } catch (error: any) {
             console.error("Erro ao exportar relatório:", error);
             toast.error("Erro ao exportar relatório", { theme: "dark" });
-        }
-    };
-
-    const handleExportarOSCompleta = async (numeroOs: number) => {
-        try {
-            // Dynamically import jsPDF
-            const jsPDFModule = await import('jspdf');
-            const jsPDF = jsPDFModule.default;
-
-            // Find the OS data from the current relatorios
-            const osData = relatorios.find((r: any) => r.numeroOs === numeroOs);
-            
-            if (!osData) {
-                toast.error("OS não encontrada", { theme: "dark" });
-                return;
-            }
-
-            const pdf = new jsPDF({
-                orientation: 'portrait',
-                unit: 'mm',
-                format: 'a4',
-            });
-
-            // Add title
-            pdf.setFontSize(16);
-            pdf.text('Ordem de Serviço Completa', 15, 15);
-            pdf.setFontSize(10);
-            pdf.text(`Data de Geração: ${new Date().toLocaleDateString()}`, 15, 25);
-
-            // Add OS details
-            let currentY = 35;
-            const lineHeight = 7;
-            const labelWidth = 50;
-            const pageHeight = pdf.internal.pageSize.getHeight();
-
-            pdf.setFontSize(10);
-            pdf.setFont(undefined, 'bold');
-            
-            const details = [
-                { label: 'Número OS:', value: osData.numeroOs?.toString() || '' },
-                { label: 'Título:', value: osData.titulo || '' },
-                { label: 'Descrição:', value: osData.descricao || '' },
-                { label: 'Setor:', value: osData.setor || '' },
-                { label: 'Status:', value: osData.status || '' },
-                { label: 'Data de Criação:', value: osData.dataCriacao ? new Date(osData.dataCriacao).toLocaleDateString() : '' },
-                { label: 'Data de Encerramento:', value: osData.dataEncerramento ? new Date(osData.dataEncerramento).toLocaleDateString() : 'N/A' },
-            ];
-
-            details.forEach(detail => {
-                if (currentY > pageHeight - 20) {
-                    pdf.addPage();
-                    currentY = 15;
-                }
-                
-                pdf.setFont(undefined, 'bold');
-                pdf.text(detail.label, 15, currentY);
-                pdf.setFont(undefined, 'normal');
-                
-                const maxWidth = 130;
-                const splitText = pdf.splitTextToSize(detail.value, maxWidth);
-                pdf.text(splitText, 15 + labelWidth, currentY);
-                
-                currentY += lineHeight * splitText.length + 2;
-            });
-
-            // Add report section
-            currentY += 10;
-            if (currentY > pageHeight - 20) {
-                pdf.addPage();
-                currentY = 15;
-            }
-
-            pdf.setFontSize(12);
-            pdf.setFont(undefined, 'bold');
-            pdf.text('Relatório da OS', 15, currentY);
-            
-            currentY += 10;
-            pdf.setFontSize(10);
-            pdf.setFont(undefined, 'normal');
-
-            // Fetch report data
-            try {
-                const allRelatorios = await RelatorioOsService.listarRelatorios();
-                const osReport = allRelatorios.find((r: any) => r.numeroOs === numeroOs);
-
-                if (osReport) {
-                    const reportDetails = [
-                        { label: 'Descrição do Trabalho:', value: osReport.descricao || 'Sem descrição' },
-                        { label: 'Técnico Responsável:', value: osReport.tecnicoId?.toString() || 'Não atribuído' },
-                        { label: 'Data de Início:', value: osReport.dataInicio ? new Date(osReport.dataInicio).toLocaleDateString() : 'N/A' },
-                        { label: 'Data de Fim:', value: osReport.dataFim ? new Date(osReport.dataFim).toLocaleDateString() : 'N/A' },
-                    ];
-
-                    reportDetails.forEach(detail => {
-                        if (currentY > pageHeight - 20) {
-                            pdf.addPage();
-                            currentY = 15;
-                        }
-
-                        pdf.setFont(undefined, 'bold');
-                        pdf.text(detail.label, 15, currentY);
-                        pdf.setFont(undefined, 'normal');
-                        
-                        const maxWidth = 130;
-                        const splitText = pdf.splitTextToSize(detail.value, maxWidth);
-                        pdf.text(splitText, 15 + labelWidth, currentY);
-                        
-                        currentY += lineHeight * splitText.length + 2;
-                    });
-                } else {
-                    pdf.setFont(undefined, 'italic');
-                    pdf.text('Nenhum relatório disponível para esta OS', 15, currentY);
-                }
-            } catch (reportError) {
-                console.error("Erro ao buscar relatório:", reportError);
-                pdf.setFont(undefined, 'italic');
-                pdf.text('Erro ao carregar relatório', 15, currentY);
-            }
-
-            pdf.save(`OS_Completa_${numeroOs}_${new Date().toISOString().split('T')[0]}.pdf`);
-            toast.success("OS completa exportada com sucesso!", { theme: "dark" });
-        } catch (error: any) {
-            console.error("Erro ao exportar OS completa:", error);
-            toast.error("Erro ao exportar OS completa. Tente novamente.", { theme: "dark" });
         }
     };
 
